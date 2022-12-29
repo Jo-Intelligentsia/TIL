@@ -1,6 +1,6 @@
-# git
+# **git**
 
-## git 저장소
+## **git 저장소**
 ---
 - 기본 흐름
 >   - 파일 작업
@@ -18,7 +18,8 @@
 >        - commited 된 파일을 스냅샷으로 관리하고 매우 크기가 작음
 >        - 파일이 변경되지 않으면 새로 저장하지 않음
 ---
-## git 설정 파일(config)
+## **git 설정 파일(config)**
+---
 - 사용자 정보(commit author) : 커밋을 하기 위해 반드시 필요
 > - git config --global user.name `"username"`
 >   - `GitHub`에서 설정한 `username`으로 설정
@@ -30,8 +31,8 @@
 > - git config --global -l
 > - git config user.name
 ---
-## git 명령어
-
+## **git 명령어**
+---
 - `$ git init` (git 사용시 필수)
 >   - 특정 폴더를 git 저장소를 만들어 git으로 관리
 >   - .git 폴더가 생성 (숨김으로 표시)

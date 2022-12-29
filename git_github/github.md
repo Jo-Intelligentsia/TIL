@@ -1,7 +1,7 @@
-# git hub
+# **git hub**
 
-## 명령어
-
+## **git hub 명령어**
+---
 - `$ git remote(원격저장소) add(추가) origin(원격저장소 기본이름) https://github.com/github usename/저장소이름`
 >   - github 에 저장소를 추가
 
