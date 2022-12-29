@@ -2,7 +2,7 @@
 >- [markdown](MarkDown/markdown.md)
 
 
->- [git](git.github/git.md)
+>- [git](git_github/git.md)
 
 
->- [github](git.github/github.md)
+>- [github](git_github/github.md)
