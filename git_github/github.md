@@ -8,10 +8,14 @@
 - `$ git remote -v`
 >    - 설정값 확인
 - `$ git push origin(원격저장소) master(브랜치)`
->    - 커밋한 파일들 git hub에 보냄
+>   - 로컬 저장소의 버전을 원격저장소로 보냄
+>    - 커밋한 버전을 github에 보냄
 - `$ git pull origin(원격저장소) master(브랜치)`
->    - 다른사람이 git hub 에서 커밋한 파일을 받아옴
+>   - 원격저장소의 버전을 로컬 저장소로 가져옴
+>    - 다른사람이 github 에서 커밋한 버전을 가져옴
 - `$ git clone url (원격저장소 주소)`
+>   - 원격저장소를 복제하여 가져옴
 >    - 다른사람의 git hub 의 커밋한 오픈소르를 복제
 - `.gitignore 파일 생성`
->    - .gitignore 에 파일 추가시 폴더 전체 커밋시 커밋 제외
+>    - 버전 관리를 별도로 하지 않는 파일/디렉토리를 관리
+>   - .gitignore 에 등록
