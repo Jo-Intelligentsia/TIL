@@ -9,4 +9,10 @@
 ---
 >- _**[branch](git_github/branch.md)**_
 ---
->- _**[python](python/python.md)**_
+>- _**[python기초](python/01_python_기초.md)**_
+---
+>- _**[python](python/02_python_제어문.md)**_
+---
+>- _**[python](python/03_python_함수기초.md)**_
+---
+>- _**[python](python/04_python_모듈과_예외처리.md)**_
