@@ -11,8 +11,10 @@
 ---
 >- _**[python기초](python/01_python_기초.md)**_
 ---
->- _**[python](python/02_python_제어문.md)**_
+>- _**[python제어문](python/02_python_제어문.md)**_
 ---
->- _**[python](python/03_python_함수기초.md)**_
+>- _**[python_함수기초](python/03_python_함수기초.md)**_
 ---
->- _**[python](python/04_python_모듈과_예외처리.md)**_
+>- _**[python_모듈과_예외처리](python/04_python_모듈과_예외처리.md)**_
+---
+>- _**[python_메서드](python/05_python_메서드.md)**_
