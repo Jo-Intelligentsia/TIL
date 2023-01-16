@@ -18,3 +18,5 @@
 >- _**[python_모듈과_예외처리](python/04_python_모듈과_예외처리.md)**_
 ---
 >- _**[python_메서드](python/05_python_메서드.md)**_
+---
+>- _**[python_사용자정의클래스](python/06_python_사용자정의클래스.md)**_
