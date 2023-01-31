@@ -20,3 +20,7 @@
 >- _**[python_메서드](python/05_python_메서드.md)**_
 ---
 >- _**[python_사용자정의클래스](python/06_python_사용자정의클래스.md)**_
+---
+>- _**[python_사용자정의함수](python/07_python_사용자정의함수.md)**_
+---
+>- _**[python_파이썬심화](python/08_python_파이썬심화.md)**_
