@@ -9,3 +9,5 @@
 ---
 >- _**[사용자정의클래스](python/06_python_사용자정의클래스.md)**_ / _**[사용자정의함수](python/07_python_사용자정의함수.md)**_ / _**[파이썬심화](python/08_python_파이썬심화.md)**_
 ---
+>- _**[algorithm_리스트](algorithm/01_algorithm_리스트.md)**_ / _**[문자열](algorithm/02_algorithm_%EB%AC%B8%EC%9E%90%EC%97%B4.mdmd)**_
+---
