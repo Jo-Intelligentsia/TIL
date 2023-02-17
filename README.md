@@ -18,4 +18,4 @@
 ---
 
 # **RDBMS**
->- _**[MySQL_Workbench](RDBMS/01_workbench.md)**_ / _**[RDB_용어](RDBMS/02_relational_Database.md)**_ / _**[SQL_기초](RDBMS/03_SQL_Basics.md)**_ / _**[Single_Table_Queries](RDBMS/04_SQL_Single_Table_Queries.md)**_
+>- _**[MySQL_Workbench](RDBMS/01_workbench.md)**_ / _**[RDB_용어](RDBMS/02_relational_Database.md)**_ / _**[SQL_기초](RDBMS/03_SQL_Basics.md)**_ / _**[Single_Table_Queries1](RDBMS/04_SQL_Single_Table_Queries.md)**_ / _**[Single_Table_Queries2](RDBMS/05_SQL_Single_Table_Queries2.md)**_
