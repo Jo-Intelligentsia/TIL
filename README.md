@@ -11,7 +11,7 @@
 
 # **algorithm**
 
->- _**[리스트](algorithm/01_algorithm_리스트.md)**_ / _**[문자열](algorithm/02_algorithm_%EB%AC%B8%EC%9E%90%EC%97%B4.mdmd)**_
+>- _**[LIST](algorithm/01_algorithm_list.md)**_ / _**[STRING](algorithm/02_algorithm_string.mdmd)**_ / _**[STACK_QUEUE](algorithm/03_algorithm_stack_queue.md)**_ / _**[HEAP_SET](algorithm/04_algorithm_heap_set.mdmd)**_
 ---
 
 # **RDBMS**
