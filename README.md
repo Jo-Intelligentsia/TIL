@@ -11,7 +11,7 @@
 
 # **algorithm**
 
->- _**[LIST](algorithm/01_algorithm_list.md)**_ / _**[STRING](algorithm/02_algorithm_string.md)**_ / _**[STACK_QUEUE](algorithm/03_algorithm_stack_queue.md)**_ / _**[HEAP_SET](algorithm/04_algorithm_heap_set.md)**_ / _**[2D_LIST](algorithm/05_algorithm_2d_list.md)**_
+>- _**[LIST](algorithm/01_algorithm_list.md)**_ / _**[STRING](algorithm/02_algorithm_string.md)**_ / _**[STACK_QUEUE](algorithm/03_algorithm_stack_queue.md)**_ / _**[HEAP_SET](algorithm/04_algorithm_heap_set.md)**_ / _**[2D_LIST](algorithm/05_algorithm_2d_list.md)**_ / _**[Exhaustive_Search](algorithm/06_algorithm_Exhaustive_Search.md)**_
 ---
 
 # **RDBMS**
