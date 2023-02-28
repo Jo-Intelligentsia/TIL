@@ -18,4 +18,4 @@
 >- _**[MySQL_Workbench](RDBMS/01_workbench.md)**_ / _**[RDB_용어](RDBMS/02_relational_Database.md)**_ / _**[SQL_기초](RDBMS/03_SQL_Basics.md)**_ 
 >- _**[Single_Table_Queries1](RDBMS/04_SQL_Single_Table_Queries.md)**_ / _**[Single_Table_Queries2](RDBMS/05_SQL_Single_Table_Queries2.md)**_ 
 >- _**[Modifying_Data](RDBMS/06_SQL_Modifying_Data.md)**_ / _**[Multi_Table_Queries](RDBMS/07_SQL_Multi_Table_Queries.md)**_ 
->- _**[Nested_Queries](RDBMS/08_SQL_Nested_Queries.md)**_  
+>- _**[Nested_Queries](RDBMS/08_SQL_Nested_Queries.md)**_ / _**[데이터분할_분석](RDBMS/09_데이터_분할_분석.md)**_
