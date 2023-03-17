@@ -22,4 +22,4 @@
 >- _**[Nested_Queries](RDBMS/08_SQL_Nested_Queries.md)**_ / _**[데이터분할_분석](RDBMS/09_데이터_분할_분석.md)**_
 
 # **WEB**
->- _**[Flexbox](WEB/01_Flexbox.md.md)**_ 
+>- _**[Flexbox](WEB/01_Flexbox.md)**_ 
