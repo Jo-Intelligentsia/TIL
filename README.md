@@ -23,4 +23,4 @@
 
 # **WEB**
 >- _**[Flexbox](WEB/01_Flexbox.md)**_ / _**[HTML_CSS](WEB/02_HTML_CSS.md)**_  / _**[Box_Model](WEB/03_The_box_model.md)**_  / _**[Positioning](WEB/04_Positioning.md)**_ / _**[Float](WEB/05_Float.md)**_ / _**[Semantic](WEB/06_Semantic_Web.md)**_ 
->- _**[Fundamentals_of_Bootstrap](WEB/07_Fundamentals_of_Bootstrap.md.md)**_ 
+>- _**[Fundamentals_of_Bootstrap](WEB/07_Fundamentals_of_Bootstrap.md.md)**_ / _**[Fundamentals_of_Grid](WEB/08_Fundamentals_of_Grid.md.md)**_ 
