@@ -25,3 +25,6 @@
 >- _**[Flexbox](WEB/01_Flexbox.md)**_ / _**[HTML_CSS](WEB/02_HTML_CSS.md)**_  / _**[Box_Model](WEB/03_The_box_model.md)**_  / _**[Positioning](WEB/04_Positioning.md)**_ / _**[Float](WEB/05_Float.md)**_ / _**[Semantic](WEB/06_Semantic_Web.md)**_ 
 >- _**[Fundamentals_of_Bootstrap](WEB/07_Fundamentals_of_Bootstrap.md)**_ / _**[Fundamentals_of_Grid](WEB/08_Fundamentals_of_Grid.md)**_ 
 >- _**[Grid_system_for_responsive_web_design](WEB/09_Grid_system_for_responsive_web_design.md)**_ 
+
+# **DJANGO**
+>- _**[Django](django/01_django_venv.md)**_ /
