@@ -27,4 +27,4 @@
 >- _**[Grid_system_for_responsive_web_design](WEB/09_Grid_system_for_responsive_web_design.md)**_ 
 
 # **DJANGO**
->- _**[Django_venv](django/01_django_venv.md)**_ / _**[design_pattern](django/02_design_pattern.md)**_ /
+>- _**[Django_venv](django/01_django_venv.md)**_ / _**[design_pattern](django/02_design_pattern.md)**_ / _**[template](django/03_template.md)**_ /

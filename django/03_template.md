@@ -1,0 +1,290 @@
+# Django - Django Template
+
+- 학습 목표
+	- Django Template System을 이해하고 적절한 템플릿 파일을 작성할 수 있다.
+	- Django Template Language 의 기본 구문과 템플릿 변수를 이해하고 템플릿 파일에서 변수와 표현식을 작성할 수 있다.
+	- 템플릿 상속을 이해하고 템플릿 상속을 사용하여 웹 페이지의 일관성을 유지하고 코드 재사용성을 높일 수 있다
+	- HTML Form의 데이터 전송 방식을 이해하고 사용자로부터 입력된 데이터를 서버로 전송하여 출력할 수 있다.
+
+
+## Template System
+### django template system
+- 데이터 표현을 제어하면서, 표현과 관련된 로직을 담당
+
+### HTML 컨텐츠를 변수 값에 따라 바꾸고 싶다면?
+```python
+	def index(request):
+		context = {
+			'name' : 'Sopia',
+			}
+		return render(request, 'articles/index.html', context)
+```
+```html
+	<body>
+		<h1>Hello, {{ name }} </h1>
+	</body>
+```
+
+
+### Django Template Language (DTL)
+- Template 에서 조건, 반복, 변수, 필터 등의 프로그래밍적 기능을 제공하는 시스템
+
+#### DTL Syntax
+- Variable
+	- view 함수에서 render 함수의 세번째 인자로 딕셔너리 타입으로 넘겨 받을 수 있음
+	- 딕셔너리 key에 해당하는 문자열이 template 에서 사용 가능한 변수명이 됨
+	- dot(.)를 사용하여 변수 속성에 접근할 수 있음
+	- `{{ variable }}`
+
+- Filters
+	- 표시할 변수를 수정할 때 사용
+	- chained가 가능하며 일부 필터는 인자를 받기도 함
+	- `{{ name|truncatewords:30}}`
+	- 약 60개의 built-in template filters를 제공
+	- `{{ variable|filter}}`
+
+- Tags
+	- 반복 또는 논리를 수행하여 제어 흐름을 만드는 등 변수보다 복잡한 일들을 수행
+	- 일부 태그는 시작과 종료 태그가 필요
+	- `{% if %} {% endif %}`
+	- 약 24개의 built-in template tags를 제공
+	- `{% tag %}`
+
+- Comments
+	- DTL에서의 주석 표현
+	- `{# name #}`
+	```django
+	{% comment %}
+		{% if name == 'Sopia %}
+		{% endif %}
+	{% endcomment %}
+	```
+
+#### DTL 실습
+```python
+	# urls.py
+	
+	urlpatterns = [
+		path('admin/', admin.site.urls),
+		path('articles/',views.index),
+		path('dinner/',views.dinner),
+	]
+
+
+	# views.py
+	import random
+	
+	def dinner(request):
+		foods = ['족발','햄버거','치킨','초밥',]
+		picked = random.choice(foods)
+		context = {
+			'foods' : foods,
+			'picked' : picked,
+		}
+		return render(request, 'articles/dinner.html',context)
+```
+```django
+	<-- dinner.html -->
+	
+	<p>{{ picked }} 메뉴는 {{ picked|length }} 글자 입니다. </p>
+
+	<h2>메뉴판</h2>
+	<ul>
+		{% for food in foods %}
+			<li>{{ food }}</li>
+		{% endfor %}
+	</ul>
+
+	{% if foods|length == 0 %}
+		<p>메뉴가 소진되었습니다.</p>
+	{% else %}
+		<p>아직 메뉴가 남았습니다</p>
+	{% endif %}
+	
+```
+
+
+## 템플릿 상속
+- 페이지의 공통요소를 포함하고, 하위 템플릿이 재정의 할 수 있는 공간을 정의하는 기본 'skeleton' 템플릿을 작성하여 상속 구조를 구축
+
+### skeleton 역할 템플릿 작성
+```django
+	<!-- base.html -->
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		...
+		{% comment %} bootstrap CDN 생략 {% endcommet %}
+	</head>
+	<body>
+		{% block content %}
+		{% endblock content %}
+		{% comment %} bootstrap CDN 생략 {% endcomment %}
+	</body>
+	</html>
+```
+
+### 기존 템플릿의 변화
+```django
+	{% extends 'articles/base.html' %} # 최상단에 고정
+	
+	{% block content %}
+		<h1>Hello, {{ name }}</h1> # block 사이에 내용을 입력 나머지 모두 지우기
+	{% endblock content %}
+```
+
+
+#### extends tag
+- `{% extends 'path' %}`
+- 자식(하위) 템플릿이 부모 템플릿을 확장한다는 것을 알림
+- 반드시 템플릿 최상단에 작성되어야 함 (2개이상 사용 불가)
+
+#### block tag
+- `{% block name %}{% endblock name %}`
+- 하위 템플릿에서 재정의 할 수 있는 블록을 정의
+- 하위 템플릿이 작성할 수 있는 공간을 지정
+
+
+## 요청과 응답 with HTML form
+
+### 데이터를 보내고 가져오기 (Sending and Retrieving form data)
+- HTML form element 를 통해 사용자와 애플리케이션 간의 상호작용 이해하기
+
+
+### form element
+- 사용자로부터 할당된 데이터를 서버로 전송
+- 웹에서 사용자 정보를 입력하는 여러 방식 (text, password등)을 제공
+
+### action & method
+- form 의 핵심 속성 2가지
+- 데이터를 어디(action)로 어떤 방식(method)으로 보낼지
+
+#### action
+- 입력 데이터가 전송될 URL을 지정 (목적지)
+- 만약 이 속성을 지정하지 않으면 데이터는 현재 form 이 있는 페이지의 URL 로 보내짐
+
+#### method
+- 데이터를 어떤 방식으로 보낼 것인지 정의
+- 데이터의 HTTP request methods (GET,POST) 를 지정
+
+### input element
+- 사용자의 데이터를 입력 받을 수 있는 요소
+- type 속성값에 따라 다양한 유형의 입력 데이터를 받음
+
+### name
+- input의 핵심 속성
+- 데이터를 제출했을 때 서버는 name 속성에 설정된 값을 통해 사용자가 입력한 데이터에 접근할 수 있음
+
+### 검색 페이지 실습
+```python
+	# urls.py
+	
+	urlpatterns = [
+		path('admin/', admin.site.urls),
+		path('articles/',views.index),
+		path('dinner/',views.dinner),
+		path('search/',views.search),
+	]
+
+
+	# views.py
+	def search(request):
+		return render(request, 'articles/search.html')
+```
+
+```django
+	<-- search.html -->
+	
+	{% extends 'articles/base.html' %}
+	
+	{% block content %}
+		<form action="" method="GET">
+			<label for="message"> 검색어 </label>
+			<input type="text" name="message" id="message">
+			<input type="submit" value="submit">
+		</form>
+	{% endblock content %}
+```
+
+
+#### django 입력 및 제출 뒤 url 변화 확인
+- `http://127.0.0.1:8000/search/?message=django`
+- message=django -> input에 입력한 데이터
+
+#### fake Naver 실습
+- Naver에서 검색 후 URL 분석
+- `https://search.naver.com/search.naver?query=django`
+- `https://search.naver.com/search.naver` ? 전
+	- 목적지 URL
+- `query`
+	- input의 name
+- `django`
+	- input 에 입력한 데이터
+
+
+#### Query String Parameters
+- 사용자의 입력 데이터를 URL 주소에 파라미터를 통해 넘기는 방법
+- 문자열은 앰퍼샌드(&) 로 연결된 key=value 쌍으로 구성되며, 기본 URL과 물음표(?) 로 구분됨
+
+
+## 요청과 응답 활용
+### 사용자 입력 데이터를 받아 그대로 출력하는 서비스 제작
+
+#### throw 작성
+```python
+	# urls.py
+	urlpatterns = [
+		path('throw/', views.throw),
+	]
+
+	# views.py
+	def throw(request):
+		return render(request, 'articles/throw.html')
+```
+```django
+	throw.html
+
+	{% extends 'articles/base.html' %}
+
+	{% block content %}
+		<h1>Throw</h1>
+		<form action='/catch/' method='GET'>
+			<input type='text' id='message' name='message'>
+			<input type='submit'>
+		</form>
+	{% endblock content %}
+```
+
+#### catch 작성
+```python
+	# urls.py
+	urlpatterns = [
+		path('catch/', views.catch),
+	]
+
+	# views.py
+	def catch(request):
+		message = request.GET.get('message')
+		context = {
+			'message' : message,
+		}
+		return render(request, 'articles/catch.html')
+```
+```django
+	catch.html
+
+	{% extends 'articles/base.html' %}
+
+	{% block content %}
+		<h1>Catch</h1>
+		<h3>{{ message }}를 받았습니다!</h3>
+	{% endblock content %}
+```
+
+
+### form 데이터는 어디에 들어 있을까?
+- 모든 요청 데이터는 HTTP request 객체에 들어 있음
+- view 함수의 첫번째 인자
+- `request.GET.get('message')`
+- `.get('message')`
+	- 딕셔너리 get 메서드를 사용해 키 값 조회
