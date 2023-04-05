@@ -28,4 +28,4 @@
 
 # **DJANGO**
 >- _**[Django_venv](django/01_django_venv.md)**_ / _**[design_pattern](django/02_design_pattern.md)**_ / _**[template](django/03_template.md)**_
->- _**[URLs](django/04_URLs.md)**_ /
+>- _**[URLs](django/04_URLs.md)**_ / _**[Model](django/05_Model.md)**_ /
